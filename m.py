@@ -21,8 +21,8 @@ KEY_FILE = "keys.json"
 
 # Cooldown settings
 COOLDOWN_TIME = 0  # in seconds
-CONSECUTIVE_ATTACKS_LIMIT = 3
-CONSECUTIVE_ATTACKS_COOLDOWN = 300  # in seconds
+CONSECUTIVE_ATTACKS_LIMIT = 9
+CONSECUTIVE_ATTACKS_COOLDOWN = 3 # in seconds
 
 # In-memory storage
 users = {}
@@ -186,8 +186,8 @@ def handle_bgmi(message):
             try:
                 port = int(command[2])
                 time = int(command[3])
-                if time > 240:
-                    response = "⚠️ 𝙀𝙧𝙧𝙤𝙧: 𝙐𝙨𝙚 𝙡𝙚𝙨𝙨𝙩𝙝𝙚𝙣 240 𝙎𝙚𝙘𝙤𝙣𝙙𝙨."
+                if time > 9999:
+                    response = "⚠️ 𝙀𝙧𝙧𝙤𝙧: 𝙐𝙨𝙚 𝙡𝙚𝙨𝙨𝙩𝙝𝙚𝙣 9999 𝙎𝙚𝙘𝙤𝙣𝙙𝙨."
                 else: 
                     record_command_logs(user_id, '/bgmi', target, port, time)
                     log_command(user_id, target, port, time)
